@@ -1,0 +1,309 @@
+{
+	"sceneObjects": [
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": 0,
+				"y": 0
+			},
+			"rotation": 0,
+			"behaviors": [
+				{
+					"name": "Match3",
+					"properties": {
+						"_gameOverFlag": false,
+						"_running": false,
+						"customEditor": {
+							"title": "Edit Match3",
+							"module": "match3Editor"
+						},
+						"_numCells": {
+							"x": 5,
+							"y": 5
+						},
+						"_cellSize": {
+							"x": 40,
+							"y": 40
+						},
+						"_margin": 8,
+						"_items": [
+							{
+								"normal": "procedural_square",
+								"special": "procedural_square",
+								"probability": 30
+							},
+							{
+								"normal": "procedural_circle",
+								"special": "procedural_circle",
+								"probability": 30
+							},
+							{
+								"normal": "procedural_star",
+								"special": "procedural_star",
+								"probability": 40
+							}
+						],
+						"_specialFive": "",
+						"_effectTemplates": {
+							"_explosion": "",
+							"_splash": "",
+							"_sparkle": "",
+							"_specialFour": "",
+							"_specialFive": ""
+						},
+						"_score": 0,
+						"_matchScore": 100,
+						"_textObject": "",
+						"_selectorTemplate": "",
+						"_highlightTemplate": "",
+						"_soundEffects": {
+							"_matchSound": "",
+							"_explosionSound": "",
+							"_specialFiveSound": ""
+						},
+						"_itemLayer": 2,
+						"_bottomLayer": 3,
+						"_topLayer": 1,
+						"_gravity": 2000,
+						"_effectScale": 1,
+						"_glowSize": 8,
+						"_sparkleRarity": 1000,
+						"gamepadControls": {
+							"left": {
+								"axis": 0,
+								"axisDirection": -1,
+								"button": 2
+							},
+							"right": {
+								"axis": 0,
+								"axisDirection": 1,
+								"button": 3
+							},
+							"up": {
+								"axis": 1,
+								"axisDirection": -1,
+								"button": 4
+							},
+							"down": {
+								"axis": 1,
+								"axisDirection": 1,
+								"button": 5
+							}
+						},
+						"keyboardControls": {
+							"left": "left",
+							"right": "right",
+							"up": "up",
+							"down": "down",
+							"highlightButton": "space"
+						},
+						"gamePadIndex": 0,
+						"controlInputDelay": 180,
+						"_controlCurrentDelay": 0,
+						"gamepadHighlightButton": 0,
+						"_buttonReleased": true,
+						"_keyboardButtonReleased": true
+					},
+					"functions": {
+						"init": {
+							"name": "init",
+							"args": [
+								"parameters"
+							]
+						},
+						"onUpdate": {
+							"name": "onUpdate",
+							"args": []
+						},
+						"onAddToScene": {
+							"name": "onAddToScene",
+							"args": [
+								"parameters"
+							]
+						},
+						"onRemoveFromScene": {
+							"name": "onRemoveFromScene",
+							"args": []
+						},
+						"inSync": {
+							"name": "inSync",
+							"args": []
+						},
+						"removeItem": {
+							"name": "removeItem",
+							"args": [
+								"x",
+								"y"
+							]
+						},
+						"changeItemType": {
+							"name": "changeItemType",
+							"args": [
+								"x",
+								"y",
+								"type"
+							]
+						},
+						"swapItems": {
+							"name": "swapItems",
+							"args": [
+								"x1",
+								"y1",
+								"x2",
+								"y2"
+							]
+						}
+					},
+					"tips": {
+						"gamepadControls": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.gamepadControls</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Controls for gamepad cursor movement. Directions - left, right, up, down\r</span><br/><span class=\"code_tooltip_description\"> Each direction has an axis, axisDirection and button\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"keyboardControls": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.keyboardControls</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Keyboard controls for cursor movement and highlight button\r</span><br/><span class=\"code_tooltip_description\"> Actions - left, right, up, down, highlightButton\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"gamePadIndex": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.gamePadIndex</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The index of the controller to use, must match an array index from wade.getGamepadData\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"controlInputDelay": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.controlInputDelay</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Delay between input actions in milliseconds\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"gamepadHighlightButton": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.gamepadHighlightButton</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Index of the gamepad button used to highlight the object at the selector\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"init": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.init</b><i> (parameters)\r</i></div><br/><span class=\"code_tooltip_description\"> Called when parent object is added to scene, used to set match 3 parameters\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> parameters </span><span class=\"code_tooltip_param_optional\"> (optional)</span>: <span class=\"code_tooltip_description\">This contains a \"match3\" object that in turn contains parameters used to setup the match3 game: <ul>\r</span></span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{x: number, y: number}</span><span class=\"code_tooltip_param_name\"> _numCells</span>: number of columns and rows to use</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{x: number, y: number}</span><span class=\"code_tooltip_param_name\"> _cellSize</span>: pixel dimension of individual square</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> margin</span>: the space between a square image and the cell border as given by cell size</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{Array}</span><span class=\"code_tooltip_param_name\"> items</span>: the array of items to include in the squares in the form {normal:string, special:string, probability:number, background:string(optional)}</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{string}</span><span class=\"code_tooltip_param_name\"> specialFive</span>: the image to use for the special five gem</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{string}</span><span class=\"code_tooltip_param_name\"> matchSound</span>: sound effect to play when a standard match is made</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{string}</span><span class=\"code_tooltip_param_name\"> explosionSound</span>: sound effect to play when a special 4 object is matched</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{string}</span><span class=\"code_tooltip_param_name\"> specialFiveSound</span>: sound effect to play when a special five gem is matched</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{name: string, _numCellsX: number, _numCellsY: number, speed: number, looping: boolean}</span><span class=\"code_tooltip_param_name\"> explosionAnimation</span>: details of effect to play on gems surrounding match 4 gem when it is matched</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{name: string, _numCellsX: number, _numCellsY: number, speed: number, looping: boolean}</span><span class=\"code_tooltip_param_name\"> sparkleAnimation</span>: details of effect to randomly play on gems that are sitting still</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{name: string, _numCellsX: number, _numCellsY: number, speed: number, looping: boolean}</span><span class=\"code_tooltip_param_name\"> splashAnimation</span>: details of effect to play when a normal match is created</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{name: string, _numCellsX: number, _numCellsY: number, speed: number, looping: boolean}</span><span class=\"code_tooltip_param_name\"> specialFourAnimation</span>: animation to play to indicate a match4 gem</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{name: string, _numCellsX: number, _numCellsY: number, speed: number, looping: boolean}</span><span class=\"code_tooltip_param_name\"> specialFiveAnimation</span>: animation to play when a match 5 gem is matched</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> itemLayer</span>: layer on which to render the squares</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> bottomLayer</span>: layer on which to render background elements</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> topLayer</span>: layer on which to render foreground elements</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> gravity</span>: speed at which moving squares fall</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> effectScale</span>: scale factor applied to the size of effects</li>\r</span><br/><span class=\"code_tooltip_description\"> <li><span class=\"code_tooltip_param_type\">{number}</span><span class=\"code_tooltip_param_name\"> glowSize</span>: pixel size of pulsating glow effect to use on special 4 gems</li>\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b></b><i> </i></div><br/><span class=\"code_tooltip_description\"> Creates and populates the board, ensuring there are no matches\r</span><br/>",
+								"source": "Match3"
+							}
+						],
+						"removeItem": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.removeItem</b><i> (x, y)\r</i></div><br/><span class=\"code_tooltip_description\"> Removes the match3 item at the location provided\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> x </span>: <span class=\"code_tooltip_description\">X cell co-ordinate of item to be removed\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> y </span>: <span class=\"code_tooltip_description\">Y cell co-ordinate of item to be removed\r</span></span><br/>",
+								"source": "Match3"
+							}
+						],
+						"changeItemType": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.changeItemType</b><i> (x, y, type)\r</i></div><br/><span class=\"code_tooltip_description\"> Changes the type of the item at the specified location to the provided type.\r</span><br/><span class=\"code_tooltip_description\"> If the type does not exist, no change will happen.\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> x </span>: <span class=\"code_tooltip_description\">X cell co-ordinate of item to change the type of\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> y </span>: <span class=\"code_tooltip_description\">Y cell co-ordinate of item to change the type of\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> type </span>: <span class=\"code_tooltip_description\">The type to change the item to\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Returns true if the type change succeeded, otherwise returns false\r</span></span><br/>",
+								"source": "Match3"
+							}
+						],
+						"swapItems": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>Match3.swapItems</b><i> (x1, y1, x2, y2)\r</i></div><br/><span class=\"code_tooltip_description\"> Swaps the position of two items\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> x1 </span>: <span class=\"code_tooltip_description\">X Co-ordinate of first item\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> y1 </span>: <span class=\"code_tooltip_description\">Y Co-ordinate of first item\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> x2 </span>: <span class=\"code_tooltip_description\">X Co-ordinate of second item\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> y2 </span>: <span class=\"code_tooltip_description\">Y Co-ordinate of second item\r</span></span><br/>",
+								"source": "Match3"
+							}
+						]
+					}
+				}
+			],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": true,
+					"image": "match3_0_preview.png",
+					"imageArea": {
+						"minX": 0,
+						"minY": 0,
+						"maxX": 1,
+						"maxY": 1
+					},
+					"alwaysDraw": false,
+					"name": "",
+					"drawModifiers": [],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 200,
+						"y": 200
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "match3_0",
+			"isTemplate": false,
+			"path": "",
+			"addToScene": {
+				"autoListen": true
+			},
+			"properties": {}
+		}
+	],
+	"paths": [],
+	"layers": [
+		null,
+		{
+			"scaleFactor": 1,
+			"translateFactor": 1,
+			"renderMode": "webgl",
+			"useQuadtree": true,
+			"resolutionFactor": 1,
+			"blur": 0,
+			"postProcessShader": "",
+			"postProcessShaderUniforms": null,
+			"properties": {}
+		}
+	],
+	"minScreenSize": {
+		"x": 0,
+		"y": 0
+	},
+	"maxScreenSize": {
+		"x": 1920,
+		"y": 1080
+	},
+	"orientation": "none",
+	"windowMode": "full",
+	"defaultLayer": 1,
+	"timeline": {
+		"events": []
+	},
+	"scripts": [
+		"match3Item.js",
+		"match3.js",
+		"match3Item.js",
+		"match3.js"
+	]
+}
